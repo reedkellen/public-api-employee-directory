@@ -1,0 +1,311 @@
+/*-------------------------------------------------------------------------------------------------------------
+Global layout setup.  By default this is designed for a mobile device.  Larger screen settings are added later.
+-------------------------------------------------------------------------------------------------------------*/
+/*
+COLOR PALETTE
+-------------
+Dark Blue - #274472
+Midnight Blue - #41729F
+Blue Grey - #5885AF
+Baby Blue - #C3E0E5
+*/
+
+/* WEB FONTS */
+/* None for this project. */
+
+/* BOX SIZING */
+* {
+  box-sizing: border-box;
+}
+
+/* FLOAT CLEARFIX */
+/* Make sure you give the parent container of things you are floating the class 'clearfix' for this to take effect. */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+  font: 1.05em/1 "Helvetica Neue", serif;
+  /*
+  The order of the properties in font: [weight] [size]/[line-height] [font stack].  The font weight is missing in the above example.  Build a "font" stack just in case the user's computer doesn't have the font your choose.  Use unitless values for line-height (which is the space between lines).
+  */
+}
+
+img {
+  max-width: 100%; /* This will keep the images in the page from being wider than their containers. */
+}
+
+/*---------
+Link Styles
+---------*/
+a:link {
+  text-decoration: none;
+  /* color: #000000; */
+}
+
+a:visited {
+  /* color: #5885AF; */
+}
+
+a:hover {
+  /* color: #C3E0E5; */
+}
+
+/*------------
+Section Styles
+------------*/
+#main-content {
+  background-color: #f8f8f8;
+  width: 100%;
+  margin: 0;
+}
+
+#main-content h1 {
+  margin: 0 auto 35px ;
+  padding-top: 60px;
+  width: 90%;
+  max-width: 350px;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+
+#search-form {
+  text-align: center;
+}
+
+#directory-wrapper {
+  margin: 10px auto;
+  padding-bottom: 80px;
+  width: 95%;
+  max-width: 350px;
+}
+
+#employee-directory {
+  width: 100%;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.emp-card {
+  border: solid #e8e8e8 2px;
+  padding: 10px;
+  width: 350px;
+  height: 200px;
+  display: inline-block;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.emp-card:focus,
+.emp-card:hover {
+  background-color: #d0d0d0;
+  cursor: pointer;
+}
+
+.emp-card .profile-picture {
+  float: left;
+  border-radius: 50%;
+  margin: 25px 15px 0 10px;
+}
+
+.emp-card .user-data {
+  float: left;
+  margin-top: 45px;
+}
+
+.user-name {
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.user-email {
+  margin-bottom: 10px;
+  font-size: .75rem;
+}
+
+.user-location {
+  font-size: .95rem;
+  text-transform: capitalize;
+}
+
+.additional-user-data {
+  display: none;
+}
+
+#modal-content img {
+  border-radius: 50%;
+  margin: 10% 90px 10px;
+}
+
+#modal-content div {
+  margin: 10px auto 0;
+  width: 90%;
+  font-size: 1.05em;
+}
+
+.user-cell {
+  border-top: solid 1px #e2e2e2;
+  padding-top: 10px;
+}
+
+/* .user-cell,
+.user-username,
+.user-address,
+.user-birthday {
+  margin-top: 10px auto 0;
+  width: 90%;
+} */
+
+.user-address {
+  text-transform: capitalize;
+}
+
+/*-----------------------
+Modal Window
+-----------------------*/
+#modal-window {
+  //display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  //border: 1px solid #888;
+  width: 350px; /* Could be more or less, depending on screen size */
+  height: 500px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    display: block;
+    clear: left;
+}
+
+#modal-close:hover,
+#modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-arrow-left,
+#modal-arrow-right {
+  background-color: #ffffff;
+  border-radius: 5px;
+  width: 75px;
+  height: 60px;
+  position: absolute;
+  text-align: center;
+  display: block;
+}
+
+#modal-arrow-left {
+  left: 20%;
+  top: 575px;
+}
+
+#modal-arrow-right {
+  right: 20%;
+  top: 575px;
+}
+
+.modal-arrow {
+  width: 100%;
+  height: 100%;
+  font-size: 3em;
+  font-weight: bold;
+}
+/*-----------
+Media Queries
+-----------*/
+@media screen and ( min-width: 480px ) {
+  #main-content h1 {
+    max-width: 372px;
+  }
+
+  #directory-wrapper {
+    max-width: 372px;
+  }
+
+  .emp-card {
+    width: 372px;
+  }
+
+  .user-email {
+    font-size: .85rem;
+  }
+}
+
+@media screen and ( min-width: 768px ) {
+
+}
+
+@media screen and ( min-width: 1024px ) {
+  #main-content h1 {
+    max-width: 790px;
+  }
+
+  #directory-wrapper {
+    max-width: 790px;
+  }
+
+  .emp-card {
+    float: left;
+    margin: 0 11.5px 20px;
+  }
+
+  #modal-arrow-left {
+    left: 20%;
+    top: 325px;
+  }
+
+  #modal-arrow-right {
+    right: 20%;
+    top: 325px;
+  }
+}
+
+@media screen and ( min-width: 1400px ) {
+  #main-content h1 {
+    max-width: 1240px;
+  }
+
+  #directory-wrapper {
+    max-width: 1240px;
+  }
+
+  .emp-card {
+    float: left;
+    margin: 0 20.66px 20px;
+  }
+
+  #modal-arrow-left {
+    left: 30%;
+    top: 425px;
+  }
+
+  #modal-arrow-right {
+    right: 30%;
+    top: 425px;
+  }
+}
